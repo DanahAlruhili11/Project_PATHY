@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background: #f0f7ff; color: #1e3a8a; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .login-card { background: transparent; width: 100%; max-width: 420px; padding: 40px; text-align: center; }
+        h2 { color: #1e3a8a; font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+        p { color: #60a5fa; font-size: 14px; margin-bottom: 30px; }
+        .input-group { margin-bottom: 20px; text-align: left; }
+        label { display: block; font-size: 13px; font-weight: 600; color: #3b82f6; margin-bottom: 6px; }
+        input { width: 100%; padding: 14px 18px; border: 1.5px solid #bfdbfe; border-radius: 14px; font-size: 14px; background: #ffffff; color: #1e3a8a; outline: none; transition: all 0.3s; }
+        input:focus { border-color: #3b82f6; box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15); }
+        .login-btn { width: 100%; padding: 14px; background: #3b82f6; color: white; border: none; border-radius: 14px; cursor: pointer; font-weight: 600; font-size: 15px; box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35); transition: background 0.3s; }
+        .login-btn:hover { background: #2563eb; }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <h2>Welcome Back</h2>
+        <p>Please enter your details to continue</p>
+        
+        <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" id="nameInput" >
+        </div>
+        
+        <div class="input-group">
+            <label>Major / Role</label>
+            <input type="text" id="roleInput" >
+        </div>
+
+        <button class="login-btn" onclick="saveUserData()">Login & Continue 🚀</button>
+    </div>
+
+    <script>
+        function saveUserData() {
+            const name = document.getElementById('nameInput').value.trim();
+            const role = document.getElementById('roleInput').value.trim();
+
+            if (name === '' || role === '') {
+                alert('Please fill in all fields!');
+                return;
+            }
+
+            localStorage.setItem('userName', name);
+            localStorage.setItem('userRole', role);
+            window.location.href = 'tasks.html';
+        }
+    </script>
+</body>
+</html>

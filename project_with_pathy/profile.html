@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background: #f0f7ff; color: #1e3a8a; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .profile-card { background: transparent; width: 100%; max-width: 420px; padding: 40px; text-align: center; }
+        
+        .avatar { width: 80px; height: 80px; background: #e0f2fe; color: #0284c7; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 700; margin: 0 auto 20px auto; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15); }
+        h2 { color: #1e3a8a; font-size: 24px; font-weight: 700; margin-bottom: 4px; }
+        .role { color: #60a5fa; font-size: 14px; margin-bottom: 25px; font-weight: 500; }
+        
+        .info-box { background: #ffffff; border-radius: 16px; padding: 22px; margin-bottom: 25px; text-align: left; border: 1px solid #dbeafe; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.04); }
+        .info-row { display: flex; justify-content: space-between; margin-bottom: 14px; font-size: 14px; }
+        .info-row:last-child { margin-bottom: 0; }
+        .label { color: #60a5fa; font-weight: 500; }
+        .value { color: #1e3a8a; font-weight: 600; }
+
+        .back-link { display: inline-block; color: #3b82f6; text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.2s; }
+        .back-link:hover { color: #1d4ed8; text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <div class="avatar" id="avatarLetter">U</div>
+        <h2 id="profileName">User Name</h2>
+        <div class="role" id="profileRole">Role</div>
+        
+        <div class="info-box">
+            <div class="info-row">
+                <span class="label">Status:</span>
+                <span class="value">Active 🎓</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Project:</span>
+                <span class="value" style="color: #10b981;">Task Manager ✨</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Tech Stack:</span>
+                <span class="value">HTML, CSS, JS, Git</span>
+            </div>
+        </div>
+
+        <a href="tasks.html" class="back-link">← Back to Task Dashboard</a>
+    </div>
+
+    <script>
+        const savedName = localStorage.getItem('userName');
+        const savedRole = localStorage.getItem('userRole');
+
+        if (savedName && savedRole) {
+            document.getElementById('profileName').textContent = savedName;
+            document.getElementById('profileRole').textContent = savedRole;
+            document.getElementById('avatarLetter').textContent = savedName.charAt(0).toUpperCase();
+        }
+    </script>
+</body>
+</html>
