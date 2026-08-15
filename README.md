@@ -30,3 +30,6 @@ A clean, minimalist, and interactive web application designed to help users orga
    ```bash
    git clone [https://github.com/DanahAlruhili11/project_with_pathy.git](https://github.com/DanahAlruhili11/project_with_pathy.git)
 >>>>>>> fac2ca8 (docs: add arabic and english compatible README file)
+
+
+by Eng:Danah
